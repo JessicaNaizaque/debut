@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contáctanos</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/scss/main.css">
+    <link rel="stylesheet" href="../static/scss/skin.css">
+
+    <link rel="icon" type="image/x-icon" href="../static/img/logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="../static/script/index.js"></script>
+</head>
+
+<body id="wrapper">
+
+    <section id="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-7 col-xs-7 top-header-links">
+                    <ul class="contact_links">
+                        <li><i class="fa fa-laptop"></i><a href="https://campus.asesoriaseducativasaldia.com/login/index.php">PLATAFORMA</a></li>
+                        <li><i class="fa fa-phone"></i><a href="#">CONTACTA CON NOSOTROS</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5 social">
+                    <ul class="social_links">
+                        <li><a href="https://bit.ly/3dr1L8T" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://bit.ly/3degVhy" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@anyi.kpg?_t=8g35ffMGoiM&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                        <li><a href="https://bit.ly/3Qhp8A5" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="../static/img/logo.png."> 
+                        </a>
+                            <!-- <h1>Aspire</h1><span>Software Solutions</span></a> -->
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">Nosotros</a></li>
+                            <li class="active"><a href="#">Contáctenos</a></li>
+                            <li><a href="/features">Servicios</a></li>
+                            <li><a href="/training">Capacitación</a></li>
+                            <li><a href="/formats">Formatos</a></li>
+                            <!-- <li><a href="login.html">Sign In</a></li>
+                            <li><a href="registration.html">Sign Up</a></li> -->
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="top_banner">
+        <div class="banner">
+            <div class="inner text-center">
+                <h2>Pregúntanos cómo lograr tus más grandes objetivos</h2>
+            </div>
+        </div>
+        <div class="page_info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-6">
+                        <h4>Contáctanos</h4>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6" style="text-align:right;">Home<span class="sep"> / </span><span class="current">Contáctanos</span></div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <section id="contact-page">
+        <div class="container">
+            <div class="section-heading text-center">
+                <h2>Déjanos tu <span>mensaje</span></h2>
+                <p class="subheading">Coméntanos cualquier duda, sugerencia o inquietud que tengas.</p>
+            </div>
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="display: none"></div>
+                
+                {% if show_alert and success %}
+                    <div class="status alert alert-success">
+                        Datos almacenados con éxito.
+                    </div>
+                {% elif show_alert and not success %}
+                    <div class="status alert alert-warning">
+                        Error al guardar los datos, por favor intente de nuevo.
+                    </div>
+                {% endif %}
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="/contact-us">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Nombre *</label>
+                            <input type="text" name="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Correo *</label>
+                            <input type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="number" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre de la Institución</label>
+                            <input type="text" name="school" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Asunto *</label>
+                            <input type="text" name="subject" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje *</label>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="6"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-default submit-button">Enviar <i class="fa fa-caret-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="contact"  style="background-color: #8E3089;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="gmap">
+                        <img height="" width="auto" src="../static/img/Angie.png" class="attachment-full img-responsive" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <br>
+                    <h2 style="color: white;" >Angie Prieto Gómez</h2>
+                    <p style="color: white;" class="textinfo">
+                        <b>Correo:</b> jardininfantilaldia&#64;gmail.com <br>
+                        <b>Teléfono:</b> 3004729917<br>
+                    </p>
+                    <p style="color: white;" class="textinfo">
+                        <b>Horario laboral:</b> <br>
+                        Lunes a viernes: 8:00 am a 5:00pm<br>
+                        Sábados: 8:00am a 1:00 pm <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 btm-footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 copyright">
+                    Developed by <a href="#">Aspire Software Solutions</a> designed by <a href="#">Designing Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
