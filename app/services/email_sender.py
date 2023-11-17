@@ -49,12 +49,12 @@ class ApigClient:
             
         url_email = self.url_commonweb + "notifications/v1/email"
         
-        var2 = "Nombre: " + name + ". Email: " + email + ". Telefono: " + phone + ". Colegio: " + school + ". Mensaje: " + message
         data = {
+            "origin": "asesoriaseducativasaldia",
             "to": self.email_to,
             "subject": subject,
-            "template": "i0_message.0",
-            "variables": [subject, var2],
+            "template": "i0_contact.0",
+            "variables": ["aead", "Nombre:", name, "Email:", email, "Telefono:", phone, "Colegio:", school, "Mensaje:", message]
         }
         
         headers = {
